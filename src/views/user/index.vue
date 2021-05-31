@@ -1,15 +1,53 @@
 <template>
   <div>
-    用户主页
-    <div class="button">
-      发接口
+    用户主页-UserInfo
+    <div>
+      {{UserList}}
     </div>
+
+    <usersearh @commitSearch='commitSearch' :DefProps='DefProps'/>
+
+    <usercard v-for="(user,index) in UserList" :key='index' :User='user' />
+
+    <userlogin />
   </div>
 </template>
 
 <script>
-export default {
+import usercard from './components/user-card';
+import userlogin from './components/user-login';
+import usersearh from './components/user-search';
 
+import {GetAllUsers} from '@/requests/api/users';
+
+export default {
+  data() {
+    return {
+      UserList: [],
+      DefProps: 'my name is nevermore'
+    };
+  },
+  components: {
+    usercard,
+    userlogin,
+    usersearh
+  },
+  methods: {
+    init: function() {
+      GetAllUsers({}).then(res => {
+        console.log("@RES", res);
+      })["catch"](e => {
+        console.log("@Error", e);
+      });
+    }
+  },
+  mounted() {
+    console.log(this);
+    this.init();
+    setTimeout(() => {
+      this.DefProps = 'my name is highlander';
+    }, 1000);
+  }
 };
 </script>
 

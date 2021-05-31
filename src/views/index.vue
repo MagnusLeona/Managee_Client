@@ -18,7 +18,6 @@ export default {
   methods: {
     testApi: function() {
       //测试api接口
-
       new Promise((resolve,reject) => {
         let req = new XMLHttpRequest();
         req.addEventListener('load', () => {
@@ -29,10 +28,12 @@ export default {
         req.addEventListener('error', () => {
           reject(req.status);
         });
-        req.open('POST',  '/MagnusServlet/index');
+        req.open('POST',  '/managee-server/index');
         req.send("name=magnus");
       }).then(res => {
         console.log('@Result got : ' + res);
+        let result = JSON.parse(res);
+        console.log(result);
       });
     }
   }

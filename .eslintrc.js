@@ -19,7 +19,7 @@ module.exports = {
     "no-unexpected-multiline":0,
     "no-parsing-error":0,
     'vue/no-parsing-error': [2, {
-      "x-invalid-end-tag": false
+      "x-invalid-end-tag": true
     }],
 
     "comma-dangle": ["error", "never"], //是否允许对象中出现结尾逗号

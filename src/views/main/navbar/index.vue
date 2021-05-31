@@ -1,6 +1,5 @@
 <template>
   <div class="title">
-    <div class="blank-block"></div>
     <div class="title-content main-center">这是标题</div>
   </div>
 </template>
@@ -16,12 +15,6 @@ export default {
   width: 100%;
   z-index: 10;
   background-color: #fff;
-}
-
-.blank-block {
-  z-index: 10;
-  width: 100%;
-  height: 40px;
 }
 
 .title-content {

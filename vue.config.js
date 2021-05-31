@@ -4,7 +4,7 @@ module.exports = {
   // 输出文件目录
   outputDir: 'dist/magnus',
   // eslint-loader 是否在保存的时候检查
-  lintOnSave: false,
+  lintOnSave: true,
   // use the full build with in-browser compiler?
   // https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only
   // compiler: false,
